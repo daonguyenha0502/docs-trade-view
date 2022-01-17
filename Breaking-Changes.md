@@ -26,22 +26,22 @@ If you use your own order dialog then you still need to make changes in your bro
 
 - Argument `silently` was removed from `placeOrder`, `modifyOrder`, `reversePosition`, `closePosition`, `closeTrade`, `cancelOrder`, `cancelOrders` methods of the [Broker API](Broker-API).
 
-- Arguments `handler` and `options` were removed from `showOrderDailog` method of the [Trading Host](Trading-Host).
+- Arguments `handler` and `options` were removed from `showOrderDailog` method of the [Trading Host](/Trading-Host.md).
 
-- Argument `handler` was removed from `showPositionBracketsDailog` method of the [Trading Host](Trading-Host).
+- Argument `handler` was removed from `showPositionBracketsDailog` method of the [Trading Host](/Trading-Host.md).
 
 - `supportCustomPlaceOrderTradableCheck` flag is no longer supported.
 
-- Override `symbolWatermarkProperties` is not supported anymore. You can use [settings_adapter](Widget-Constructor#settings_adapter) with `symbolWatermark` key.
+- Override `symbolWatermarkProperties` is not supported anymore. You can use [settings_adapter](/Widget-Constructor.md#settings_adapter) with `symbolWatermark` key.
 
 ## Version 1.14
 
 - [createButton](Widget-Methods#createButtonoptions) returns `HTMLElement` instead of `JQuery`.
-- [createButton](Widget-Methods#createButtonoptions) must be used after [headerReady()](Widget-Methods#headerready) `Promise` is resolved.
+- [createButton](Widget-Methods#createButtonoptions) must be used after [headerReady()](/Widget-Methods.md#headerready) `Promise` is resolved.
 - [getVisibleRange](Chart-Methods#getVisibleRange) returns `{from, to}` in the UTC timezone (it was a timezone selected on a chart before).
 - Method `onready` was removed. You can use `window.addEventListener('DOMContentLoaded', callback, false)` instead.
 - `saveAsSnapshot` parameter was removed from [saveChartToServer](Widget-Methods#savecharttoserveroncompletecallback-onfailcallback-options)
-- `indicators_file_name` constructor option was removed. Use [custom_indicators_getter](Widget-Constructor#custom_indicators_getter) instead.
+- `indicators_file_name` constructor option was removed. Use [custom_indicators_getter](/Widget-Constructor.md#custom_indicators_getter) instead.
   We made this change to speed up the loading of the library and get rid of possible vulnerabilities that may occur when loading a file.
   You just need to move the code of your custom indicators from the JS file to the widget constructor, wrapping them in a function and a Promise
 
@@ -55,9 +55,9 @@ If you use your own order dialog then you still need to make changes in your bro
 
 ## Version 1.13
 
-- Action `takeScreenshot` from [executeActionById](Chart-Methods#executeactionbyidactionid) method is removed. Use [takeScreenshot](Widget-Methods#takescreenshot) method instead.
-- Action `lockDrawingsAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](Chart-Methods#getcheckableactionstateactionid) methods is removed. Use [lockAllDrawingTools](Widget-Methods#lockalldrawingtools) instead.
-- Action `hideAllDrawingsAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](Chart-Methods#getcheckableactionstateactionid) methods is removed. Use [hideAllDrawingTools](Widget-Methods#hidealldrawingtools) instead.
+- Action `takeScreenshot` from [executeActionById](/Chart-Methods.md#executeactionbyidactionid) method is removed. Use [takeScreenshot](/Widget-Methods.md#takescreenshot) method instead.
+- Action `lockDrawingsAction` from [executeActionById](/Chart-Methods.md#executeactionbyidactionid) and [getCheckableActionState](/Chart-Methods.md#getcheckableactionstateactionid) methods is removed. Use [lockAllDrawingTools](/Widget-Methods.md#lockalldrawingtools) instead.
+- Action `hideAllDrawingsAction` from [executeActionById](/Chart-Methods.md#executeactionbyidactionid) and [getCheckableActionState](/Chart-Methods.md#getcheckableactionstateactionid) methods is removed. Use [hideAllDrawingTools](/Widget-Methods.md#hidealldrawingtools) instead.
 - Featureset `caption_buttons_text_if_possible` is enabled by default.
 - Fixed an [issue](https://github.com/tradingview/charting_library/issues/2652) that was causing bars to shift. Time-shifted bars used to appear when daily bars had a negative exchange timezone offset along with a 24x7 session. If you have a workaround for this issue, please remove it before updating to this version.
 
@@ -74,7 +74,7 @@ If you use your own order dialog then you still need to make changes in your bro
 
 Study overrides:
 
-- Overrides for `Overlay` should be applied only via `studies_overrides` (and `applyStudiesOverrides` in runtime). In the previous versions you had to use `overrides` and `applyOverrides`). See [Studies-Overrides](Studies-Overrides) page.
+- Overrides for `Overlay` should be applied only via `studies_overrides` (and `applyStudiesOverrides` in runtime). In the previous versions you had to use `overrides` and `applyOverrides`). See [Studies-Overrides](/Studies-Overrides.md) page.
 - Starting from this version you are no longer able to override `showStudyArguments` and `showLastValue` using `options` keyword.
 
 **Trading Terminal**
@@ -91,14 +91,14 @@ The following items are still supported in the Trading Terminal, but will be dep
 The following changes should be applied to your Trading Controller implementation to move to new Broker API:
 
 - Method `setHost` is removed. Host should be passed to the constructor of Broker API.
-- Method `buttonDropdownItems` is removed. Broker API should update [Broker API](Trading-Host) using `setButtonDropdownActions`.
+- Method `buttonDropdownItems` is removed. Broker API should update [Broker API](/Trading-Host.md) using `setButtonDropdownActions`.
 - Methods `configFlags` and `durations` are removed. Use [Widget Constructor](Widget-Constructor) fields instead.
 - All methods that returned `$.Deferred` should be modified to return Promise.
 - Method `chartContextMenuItems` is renamed to `chartContextMenuActions`.
 - Method `isTradable` changed to return a Promise instead of a Boolean value.
 - All string constants ("working", "buy" etc.) should be replaced with the appropriate number of constants.
 - Position `avg_price` renamed to `avgPrice`.
-- `tradingController` field in the [Widget Constructor](Widget-Constructor) is removed. Use `brokerFactory` instead.
+- `tradingController` field in the [Widget Constructor](/Widget-Constructor.md) is removed. Use `brokerFactory` instead.
 
 ## Version 1.11
 
@@ -126,8 +126,8 @@ The following items are still supported in Trading Terminal, but will be depreca
 
 - The chart can no longer show active orders only. Appropriate methods have been removed.
 - `showOrderDialog` receives an object instead of arguments list
-- `showSampleOrderDialog` removed, use [showOrderDialog](Trading-Host#showorderdialogorder-focus-promise) instead
-- `showOrderDialog` removed from [Broker API](Broker-API), use `placeOrder` and `modifyOrder` receive `silently` argument instead
+- `showSampleOrderDialog` removed, use [showOrderDialog](/Trading-Host.md#showorderdialogorder-focus-promise) instead
+- `showOrderDialog` removed from [Broker API](/Broker-API.md), use `placeOrder` and `modifyOrder` receive `silently` argument instead
 - `reversePosition`, `closePosition`, `cancelOrder` have an additional argument `silently`.
 
 ## Version 1.7
