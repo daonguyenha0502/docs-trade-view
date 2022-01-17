@@ -9,11 +9,11 @@ Here is the list of breaking changes:
 ## Version 1.15
 
 - Featureset `show_logo_on_all_charts` has been removed.
-- Action `magnetAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](Chart-Methods#getcheckableactionstateactionid) methods is removed. Use [magnetEnabled](Widget-Methods#magnetenabled) instead.
+- Action `magnetAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](/Chart-Methods.md#getcheckableactionstateactionid) methods is removed. Use [magnetEnabled](/Widget-Methods.md#magnetenabled) instead.
 - `callback` argument of [createStudy](Chart-Methods#createstudyname-forceoverlay-lock-inputs-overrides-options) has been removed.
 - [createStudy](Chart-Methods#createstudyname-forceoverlay-lock-inputs-overrides-options) returns [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) instead of `entityId`.
-- [Pane-Api](Pane-Api) method `getLeftPriceScale` is removed and replaced with `getLeftPriceScales` that returns an array of scales instead a single element.
-- [Pane-Api](Pane-Api) method `getRightPriceScale` is removed and replaced with `getRightPriceScales` that returns an array of scales instead a single element.
+- [Pane-Api](/Pane-Api.md) method `getLeftPriceScale` is removed and replaced with `getLeftPriceScales` that returns an array of scales instead a single element.
+- [Pane-Api](/Pane-Api.md) method `getRightPriceScale` is removed and replaced with `getRightPriceScales` that returns an array of scales instead a single element.
 
 **Trading Terminal**
 
@@ -24,7 +24,7 @@ Till now the Trading Terminal called broker adapter's methods (e.g. `placeOrder`
 Starting from 1.15 the Trading Terminal shows all dialogs by itself and invokes broker adapter's methods to send an order or a position to the broker's server. The reason for this change is that we've added an order panel that can be used to place an order at any time.
 If you use your own order dialog then you still need to make changes in your broker adapter's methods, but additionally you need to use `metainfo` to pass the dialog constructor to the Trading Terminal.
 
-- Argument `silently` was removed from `placeOrder`, `modifyOrder`, `reversePosition`, `closePosition`, `closeTrade`, `cancelOrder`, `cancelOrders` methods of the [Broker API](Broker-API).
+- Argument `silently` was removed from `placeOrder`, `modifyOrder`, `reversePosition`, `closePosition`, `closeTrade`, `cancelOrder`, `cancelOrders` methods of the [Broker API](/Broker-API.md).
 
 - Arguments `handler` and `options` were removed from `showOrderDailog` method of the [Trading Host](/Trading-Host.md).
 
@@ -36,11 +36,11 @@ If you use your own order dialog then you still need to make changes in your bro
 
 ## Version 1.14
 
-- [createButton](Widget-Methods#createButtonoptions) returns `HTMLElement` instead of `JQuery`.
-- [createButton](Widget-Methods#createButtonoptions) must be used after [headerReady()](/Widget-Methods.md#headerready) `Promise` is resolved.
-- [getVisibleRange](Chart-Methods#getVisibleRange) returns `{from, to}` in the UTC timezone (it was a timezone selected on a chart before).
+- [createButton](/Widget-Methods.md#createButtonoptions) returns `HTMLElement` instead of `JQuery`.
+- [createButton](/Widget-Methods.md#createButtonoptions) must be used after [headerReady()](/Widget-Methods.md#headerready) `Promise` is resolved.
+- [getVisibleRange](/Chart-Methods.md#getVisibleRange) returns `{from, to}` in the UTC timezone (it was a timezone selected on a chart before).
 - Method `onready` was removed. You can use `window.addEventListener('DOMContentLoaded', callback, false)` instead.
-- `saveAsSnapshot` parameter was removed from [saveChartToServer](Widget-Methods#savecharttoserveroncompletecallback-onfailcallback-options)
+- `saveAsSnapshot` parameter was removed from [saveChartToServer](/Widget-Methods.md#savecharttoserveroncompletecallback-onfailcallback-options)
 - `indicators_file_name` constructor option was removed. Use [custom_indicators_getter](/Widget-Constructor.md#custom_indicators_getter) instead.
   We made this change to speed up the loading of the library and get rid of possible vulnerabilities that may occur when loading a file.
   You just need to move the code of your custom indicators from the JS file to the widget constructor, wrapping them in a function and a Promise
@@ -86,13 +86,13 @@ The following items are still supported in the Trading Terminal, but will be dep
 - `subscribePL` and `unsubscribePL`. The broker should call `plUpdate` method of the Host every time the profit is changed.
 - `supportDOM` is removed. DOM widget visibility can be set using `dome_widget` featureset.
 
-**The Trading Controller is replaced with [Broker API](Broker-API)**.
+**The Trading Controller is replaced with [Broker API](/Broker-API.md)**.
 
 The following changes should be applied to your Trading Controller implementation to move to new Broker API:
 
 - Method `setHost` is removed. Host should be passed to the constructor of Broker API.
 - Method `buttonDropdownItems` is removed. Broker API should update [Broker API](/Trading-Host.md) using `setButtonDropdownActions`.
-- Methods `configFlags` and `durations` are removed. Use [Widget Constructor](Widget-Constructor) fields instead.
+- Methods `configFlags` and `durations` are removed. Use [Widget Constructor](/Widget-Constructor.md) fields instead.
 - All methods that returned `$.Deferred` should be modified to return Promise.
 - Method `chartContextMenuItems` is renamed to `chartContextMenuActions`.
 - Method `isTradable` changed to return a Promise instead of a Boolean value.
