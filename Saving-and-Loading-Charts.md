@@ -1,6 +1,6 @@
 The Charting Library supports saving/loading charts and study templates using 2 levels of API:
 
-1. **Low-Level**: save/load functionality is enabled by widget's `save()` / `load()` [methods](Widget-Methods#savecallback) and `createStudyTemplate()` / `applyStudyTemplate()` [methods](Chart-Methods#createstudytemplateoptions).
+1. **Low-Level**: save/load functionality is enabled by widget's `save()` / `load()` [methods](Widget-Methods.md#savecallback) and `createStudyTemplate()` / `applyStudyTemplate()` [methods](Chart-Methods.md#createstudytemplateoptions).
     One should take of the storage on the server.
     You are able to save the JSONs where you wish. For example, you may embed them to your saved pages or user's working area etc.
 
@@ -27,7 +27,7 @@ Here are a few steps for those who want to have their own chart storage:
 
 ## Developing your own backend
 
-* Charting Library sends HTTP/HTTPS commands to `charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id`. `charts_storage_url`, `charts_storage_api_version`, `client_id` and `user_id` are the arguments of the [widget constructor](Widget-Constructor).
+* Charting Library sends HTTP/HTTPS commands to `charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id`. `charts_storage_url`, `charts_storage_api_version`, `client_id` and `user_id` are the arguments of the [widget constructor](Widget-Constructor.md).
 * You should implement the processing of 4 requests: save chart / load chart / delete chart / list charts.
 
 ### LIST CHARTS

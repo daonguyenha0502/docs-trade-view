@@ -2,7 +2,7 @@ Here is a list of methods supported by the chart.
 
 **Before version 1.4.** You can call these methods using widget object returned to you by widget's constructor.
 
-**Starting from version 1.5.** You can call these methods using chart object returned to you by widget's methods [chart(index)](Widget-Methods#chart-chartindex) or [activeChart()](Widget-Methods#chart-activechart).
+**Starting from version 1.5.** You can call these methods using chart object returned to you by widget's methods [chart(index)](Widget-Methods.md#chart-chartindex) or [activeChart()](Widget-Methods.md#chart-activechart).
 
 ## Methods
 
@@ -63,15 +63,15 @@ Here is a list of methods supported by the chart.
 
 ### onDataLoaded()
 
-You can subscribe using [Subscription](Subscription) object returned by this function to be notified when new history bars are loaded. You can also use the same object to unsubscribe from the event.
+You can subscribe using [Subscription](Subscription.md) object returned by this function to be notified when new history bars are loaded. You can also use the same object to unsubscribe from the event.
 
 ### onSymbolChanged()
 
-You can subscribe using [Subscription](Subscription) object returned by this function to be notified when the symbol is changed. You can also use the same object to unsubscribe from the event.
+You can subscribe using [Subscription](Subscription.md) object returned by this function to be notified when the symbol is changed. You can also use the same object to unsubscribe from the event.
 
 ### onIntervalChanged()
 
-You can subscribe using [Subscription](Subscription) object returned by this function to be notified when the interval is changed. You can also use the same object to unsubscribe from the event.
+You can subscribe using [Subscription](Subscription.md) object returned by this function to be notified when the interval is changed. You can also use the same object to unsubscribe from the event.
 When the event is fired it will provide the following arguments:
 
 1. `interval`: new interval
@@ -108,7 +108,7 @@ The Charting Library will call the callback function every time the crosshair po
 
 *Since version 1.13.*
 
-You can subscribe using [Subscription](Subscription) object returned by this function to be notified when visible time range is changed. You can also use the same object to unsubscribe from the event.
+You can subscribe using [Subscription](Subscription.md) object returned by this function to be notified when visible time range is changed. You can also use the same object to unsubscribe from the event.
 
 ## Chart Actions
 
@@ -130,7 +130,7 @@ Makes the chart change its symbol. Callback function is called once the data for
 
 ### setResolution(resolution, callback)
 
-1. `resolution`: string. Format is described in another [article](Resolution).
+1. `resolution`: string. Format is described in another [article](Resolution.md).
 1. `callback`: function()
 
 Makes the chart change its resolution. Callback function is called once new data is loaded.
@@ -139,7 +139,7 @@ Makes the chart change its resolution. Callback function is called once new data
 
 Makes the chart re-request data from the data feed. The function is often called when chart's data has changed.
 
-Before calling this function you should call [onResetCacheNeededCallback](JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback).
+Before calling this function you should call [onResetCacheNeededCallback](JS-Api.md#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback).
 
 ### executeActionById(actionId)
 
@@ -426,7 +426,7 @@ Returns an array of instances of the [PaneApi](Pane-Api) that allows you to inte
 
 Saves the study template to JS object. Charting Library will call your callback function and pass the state object as an argument.
 
-This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
+This call is a part of low-level [save/load API](Saving-and-Loading-Charts.md).
 
 ### applyStudyTemplate(template)
 
@@ -434,7 +434,7 @@ This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
 Loads the study template from the `template` object.
 
-This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
+This call is a part of low-level [save/load API](Saving-and-Loading-Charts.md).
 
 ## Trading Primitives
 
@@ -445,7 +445,7 @@ This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
 Creates a new trading order on the chart and returns an API-object that you can use to adjust its properties and behavior.
 
-It is strongly recommended to read [this article](Trading-Primitives) before using this call.
+It is strongly recommended to read [this article](Trading-Primitives.md) before using this call.
 
 API object methods:
 
@@ -522,7 +522,7 @@ widget.chart().createOrderLine()
 
 Creates a new trading position on the chart and returns an API-object that you can use to adjust its properties and behavior.
 
-It is strongly recommended to read [this article](Trading-Primitives) before using this call.
+It is strongly recommended to read [this article](Trading-Primitives.md) before using this call.
 
 API object methods:
 
@@ -605,7 +605,7 @@ widget.chart().createPositionLine()
 
 Creates a new trade execution on the chart and returns an API-object that you can use to control the execution properties.
 
-It is strongly recommended to read [this article](Trading-Primitives) before using this call.
+It is strongly recommended to read [this article](Trading-Primitives.md) before using this call.
 
 API object has a set of properties listed below. Each property should be used through respective accessors.
 For example, if you wish to work with `Extend Left` property, then use `getExtendLeft()` of `setExtendLeft()` methods.
@@ -670,7 +670,7 @@ Returns the current symbol information of the chart. The object has the followin
 
 ### resolution()
 
-Returns the chart's time interval. The format is described in this [article](Resolution).
+Returns the chart's time interval. The format is described in this [article](Resolutionv.md)
 
 ### getVisibleRange()
 
@@ -738,7 +738,7 @@ Exports data from the chart, returns a Promise object. This method doesn't load 
 
 *Starting from version 1.15.*
 
-Returns [SelectionApi](Selection-Api) to that can be used to change the chart selection and subscribe to chart selection changes.
+Returns [SelectionApi](Selection-Api.md) to that can be used to change the chart selection and subscribe to chart selection changes.
 
 ### setZoomEnabled(enabled)
 
@@ -754,9 +754,9 @@ Enables (if the parameter is true) or disables (if the parameter is false) scrol
 
 ## See Also
 
-* [Widget Methods](Widget-Methods)
-* [Customization Overview](Customization-Overview)
-* [Widget Constructor](Widget-Constructor)
-* [Saving and Loading Charts](Saving-and-Loading-Charts)
-* [Overriding Studies' Defaults](Studies-Overrides)
-* [Overriding Chart's Defaults](Overrides)
+* [Widget Methods](Widget-Methods.md)
+* [Customization Overview](Customization-Overview.md)
+* [Widget Constructor](Widget-Constructor.md)
+* [Saving and Loading Charts](Saving-and-Loading-Charts.md)
+* [Overriding Studies' Defaults](Studies-Overrides.md)
+* [Overriding Chart's Defaults](Overrides.md)

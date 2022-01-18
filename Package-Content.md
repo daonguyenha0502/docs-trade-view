@@ -24,7 +24,7 @@ You can check the Charting Library version by entering the `TradingView.version(
 * `/charting_library/charting_library.min.js` contains an external Charting Library widget interface. This file is not supposed to be edited.
 * `/charting_library/charting_library.min.d.ts` contains TypeScript definitions for the widget interface.
 * `/charting_library/datafeed-api.d.ts` contains TypeScript definitions for the data feed interface.
-* `/charting_library/datafeeds/udf/` contains [UDF-compatible](UDF) datafeed wrapper (implements [JS API](JS-Api) to connect to Charting Library and UDF to connect to datafeed). Sample datafeed wrapper implements pulse real-time emulation. You are free to edit its code.
+* `/charting_library/datafeeds/udf/` contains [UDF-compatible](UDF.md) datafeed wrapper (implements [JS API](JS-Api.md) to connect to Charting Library and UDF to connect to datafeed). Sample datafeed wrapper implements pulse real-time emulation. You are free to edit its code.
 * `/charting_library/static` folder stores Charting Library internal content and is not intended for other purposes.
 * `/index.html` is an example of using Charting Library widget on your web page.
 * `/test.html` is an example of using different Charting Library customization features.

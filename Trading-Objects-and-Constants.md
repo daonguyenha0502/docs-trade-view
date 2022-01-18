@@ -6,7 +6,7 @@
 
 ### configFlags: object
 
-This is an object that should be passed in the constructor of the Trading Terminal to [brokerConfig](Widget-Constructor#brokerConfig). Each field should have a boolean value (`true`/`false`):
+This is an object that should be passed in the constructor of the Trading Terminal to [brokerConfig](Widget-Constructor.md#brokerConfig). Each field should have a boolean value (`true`/`false`):
 
 * `supportReversePosition`
 
@@ -32,14 +32,14 @@ This is an object that should be passed in the constructor of the Trading Termin
 
     *Default:* `false`
 
-    Broker provides PL for a position. If the broker calculates profit/loss by itself it should call [plUpdate](Trading-Host#plupdatepositionid-pl) as soon as PL is changed.
+    Broker provides PL for a position. If the broker calculates profit/loss by itself it should call [plUpdate](Trading-Host.md#plupdatepositionid-pl) as soon as PL is changed.
     Otherwise Chart will calculate PL as a difference between the current trade and an average price of the position.
 
 * `supportMargin`
 
     *Default:* `false`
 
-    Broker supports margin. If the broker supports margin it should call [marginAvailableUpdate](Trading-Host#marginavailableupdatemarginavailable) when the Trading Terminal subscribes using [subscribeMarginAvailable](Broker-API#subscribemarginavailable).
+    Broker supports margin. If the broker supports margin it should call [marginAvailableUpdate](Trading-Host.md#marginavailableupdatemarginavailable) when the Trading Terminal subscribes using [subscribeMarginAvailable](Broker-API.md#subscribemarginavailable).
 
 * `supportOrderBrackets`
 
